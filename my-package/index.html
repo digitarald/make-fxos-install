@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Any App!</title>
+	<style>
+		html, body, form {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+		input {
+			font-size: 1.1em;
+			-moz-box-sizing: border-box;
+			padding: 0.6em 0.4em;
+			width: 100%;
+			display: inline-block;
+		}
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		ul a {
+			font-size: 1.1em;
+			display: block;
+			margin: 0.6em 0.4em;
+		}
+	</style>
+</head>
+<body>
+	<form id="form-1">
+		<input type="url" id="url-1" value="http://" />
+		<input type="submit" value="Open URL" />
+	</form>
+	<script>
+		document.getElementById('form-1').addEventListener('submit', function(evt) {
+			evt.preventDefault();
+			location.href = document.getElementById('url-1').value;
+		});
+	</script>
+</body>
+</html>

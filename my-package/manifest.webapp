@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "name": "My Package",
+  "description": "Just a packaged App",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "Mozilla Labs",
+    "url": "http://www.mozillalabs.com"
+  },
+  "orientation": "landscape"
+}

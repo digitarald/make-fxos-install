@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "name": "My Webapp",
+  "description": "Just a hosted App.",
+  "launch_path": "/",
+  "developer": {
+    "name": "Mozilla Labs",
+    "url": "http://www.mozillalabs.com"
+  }
+}
