@@ -1,6 +1,6 @@
 # Make FxOS Install
 
-Easily install packaged and hosted apps using the Firefox OS remote debugging protocols.
+Command-line tools to install packaged and hosted apps using the Firefox OS remote debugging protocols.
 
 ## How it works
 
@@ -9,6 +9,8 @@ Easily install packaged and hosted apps using the Firefox OS remote debugging pr
 3. `Makefile`: Forward remote debugging port (6000) from device to computer (via `adb`)
 4. `Makefile`: Run `install.js` via `xpcshell`
 5. `install.js`: Remotely install app from folder using the [Webapp Actor](http://mxr.mozilla.org/mozilla-central/source/b2g/chrome/content/dbg-webapps-actors.js).
+
+The script infers the app id, which is required for the install script, from the last folder in the app path. Optionally it can be provided in the command line via `ID=`. The id should to be lower case.
 
 ## Dependencies
 
@@ -27,7 +29,7 @@ http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/18.0.2/runtimes/
 
 http://developer.android.com/sdk/index.html#download
 
-## Device Setup
+### Enable `Remote Debugging` on Device
 
 Enable `Remote Debugging` in `Settings > Device Information > Developer`.
 
@@ -41,6 +43,14 @@ Install packaged app from folder ``
 
 	make FOLDER=my-package packaged install
 
+From another folder:
+
+	make FOLDER=~/Sites/mobile-dev packaged install
+
+From another folder, setting app id (recommended if the folder name is not useful as unique app id):
+
+	make FOLDER=~/Sites/mobile-dev/web ID=mobile-dev packaged install
+
 ### Hosted
 
 See `my-hosted` folder. Your folder only needs to contain `manifest.webapp` and a `metadata.json`. In most cases you only need to adapt `origin` in `metadata.json` and `launch_path` in the manifest.
@@ -49,3 +59,6 @@ Install hosted app from folder `my-hosted`:
 
 	make FOLDER=my-hosted hosted install
 
+## Thanks
+
+To [Fabrice](https://github.com/fabricedesre) for `install.js`, its remote debugging counterpart and for always fixing broken things.
