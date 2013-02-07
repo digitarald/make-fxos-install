@@ -2,7 +2,7 @@ PORT_DEVICE = 6000
 PORT_LOCAL = 6000
 XPCSHELL = ~/bin/xulrunner-sdk/bin/xpcshell
 ADB = ~/bin/android-sdk/platform-tools/adb
-ID ?= ${shell basename ${FOLDER}}
+ID ?= ${shell basename ${FOLDER} | tr A-Z a-z}
 
 package:
 	@echo "ZIPPING ${FOLDER} into application.zip"
