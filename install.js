@@ -56,7 +56,7 @@ gClient.connect(function onConnected(aType, aTraits) {
     gClient.request({ to: aResponse.webappsActor,
                       type: "install",
                       appId: gId,
-                      appType: 1
+                      appType: 2
                     },
                     function onResponse(aResponse) {
       if (aResponse.error) {
