@@ -21,11 +21,11 @@ If you choose a different path, change the variables in `Makefile`):
 	XPCSHELL = ~/bin/xulrunner-sdk/bin/xpcshell
 	ADB = ~/bin/android-sdk/platform-tools/adb
 
-### XULRunner (XPCShell)
+### XULRunner (contains XPCShell command)
 
-http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/18.0.2/runtimes/
+http://ftp.mozilla.org/pub/mozilla.org/xulrunner/releases/18.0.2/sdk/
 
-### Android SDK (ADB)
+### Android SDK (contains ADB command)
 
 http://developer.android.com/sdk/index.html#download
 
